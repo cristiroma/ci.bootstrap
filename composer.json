@@ -1,0 +1,21 @@
+{
+    "name": "cristiroma/ci.bootstrap",
+    "description": "Bootstrap testing environments",
+    "type": "project",
+    "authors": [
+      {
+        "name": "Cristian Romanescu",
+        "email": "cristian.romanescu@eaudeweb.ro"
+      }
+    ],
+    "autoload": {
+      "psr-4": { "EdW\\Git\\": "src/" }
+    },
+    "autoload-dev": {
+      "psr-4": { "EdW\\Git\\Tests\\": "tests/" }
+    },
+    "require": {
+      "monolog/monolog": "^1.23",
+      "phpunit/phpunit": "^5.7"
+    }
+}
