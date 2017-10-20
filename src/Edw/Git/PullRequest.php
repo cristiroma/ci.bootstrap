@@ -4,23 +4,45 @@ namespace Edw\Git;
 
 class PullRequest {
 
+  private $payload = null;
+
   private $action = null;
   private $url = null;
 
   private $branch = null;
   private $sha = null;
 
-
+  /**
+   * Create a pull request object from JSON payload.
+   *
+   * @param \stdClass $payload
+   *
+   * @return Edw\Git\PullRequest
+   */
   public static function create(\stdClass $payload) {
     $ob = new PullRequest();
+    $ob->payload = $payload;
     $ob->setAction($payload->action);
     $ob->setUrl($payload->pull_request->url);
     $ob->setUrl($payload->pull_request->url);
-    $ob->setBranch($payload->head->ref);
-    $ob->setSha($payload->head->sha);
+    $ob->setBranch($payload->pull_request->head->ref);
+    $ob->setSha($payload->pull_request->head->sha);
     return $ob;
   }
 
+  /**
+   * @return null
+   */
+  public function getPayload() {
+    return $this->payload;
+  }
+
+  /**
+   * @param null $payload
+   */
+  public function setPayload($payload) {
+    $this->payload = $payload;
+  }
 
   /**
    * @return null

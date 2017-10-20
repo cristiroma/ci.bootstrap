@@ -9,13 +9,12 @@
       }
     ],
     "autoload": {
-      "psr-4": { "EdW\\Git\\": "src/" }
+      "psr-4": { "Edw\\": "src/Edw" }
     },
     "autoload-dev": {
-      "psr-4": { "EdW\\Git\\Tests\\": "tests/" }
+      "psr-4": { "Tests\\Edw\\": "test" }
     },
     "require": {
-      "monolog/monolog": "^1.23",
       "phpunit/phpunit": "^5.7"
     }
 }
